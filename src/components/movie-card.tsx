@@ -13,8 +13,7 @@ type Props = {
 };
 
 export const MovieCard = ({ movie, index, view = true }: Props) => {
-  const isMovie =
-    movie.media_type === "movie" || movie.media_type === undefined;
+  const mediaType = movie.media_type ?? "movie";
 
   const content = (
     <>
@@ -47,12 +46,11 @@ export const MovieCard = ({ movie, index, view = true }: Props) => {
       className="relative"
     >
       <Card className="bg-transparent border-0">
-        <CardContent className="p-0 overflow-hidden rounded-lg relative group">
-          {isMovie ? (
-            <Link href={`/${movie.id}`}>{content}</Link>
-          ) : (
-            <div className="cursor-default">{content}</div>
-          )}
+        <CardContent
+          className="p-0 overflow-hidden rounded-lg relative group"
+          onMouseEnter={() => console.log(movie)}
+        >
+          <Link href={`/${mediaType}/${movie.id}`}>{content}</Link>
         </CardContent>
       </Card>
     </motion.div>

@@ -1,6 +1,6 @@
-import { fetchFilmDetails } from "@/app/actions";
 import { notFound } from "next/navigation";
-import { FilmDetailClient } from "./film-details";
+import { SerieDetailClient } from "./serie-details";
+import { fetchSerieDetails } from "@/app/actions/fetch-serie.details";
 
 type Props = {
   params: Promise<{
@@ -13,8 +13,8 @@ export default async function FilmDetailPage({ params }: Props) {
 
   if (!id) return notFound();
 
-  const movie = await fetchFilmDetails(Number(id));
+  const movie = await fetchSerieDetails(Number(id));
   if (!movie) return notFound();
 
-  return <FilmDetailClient movie={movie} />;
+  return <SerieDetailClient movie={movie} />;
 }

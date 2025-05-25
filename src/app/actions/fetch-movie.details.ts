@@ -3,20 +3,20 @@
 import { axiosInstance } from "@/config";
 import type { Movie, MovieVideoResponse, MovieCreditsResponse } from "@/types";
 
-export async function fetchFilmDetails(
+export async function fetchMovieDetails(
   id: number
 ): Promise<
   (Movie & { trailerKey?: string; cast?: MovieCreditsResponse["cast"] }) | null
 > {
   try {
     const { data } = await axiosInstance.get<Movie>(`/movie/${id}`, {
-      params: { language: "es-ES" },
+      params: { language: "es-MX" },
     });
 
     // Trailer
     const { data: videoData } = await axiosInstance.get<MovieVideoResponse>(
       `/movie/${id}/videos`,
-      { params: { language: "es-ES" } }
+      { params: { language: "es-MX" } }
     );
 
     const trailer = videoData.results.find(
@@ -26,7 +26,7 @@ export async function fetchFilmDetails(
     // Reparto
     const { data: creditsData } = await axiosInstance.get<MovieCreditsResponse>(
       `/movie/${id}/credits`,
-      { params: { language: "es-ES" } }
+      { params: { language: "es-MX" } }
     );
 
     return {

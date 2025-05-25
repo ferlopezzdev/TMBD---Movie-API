@@ -40,7 +40,7 @@ export async function fetchSearched(
         params: {
           query,
           include_adult: false,
-          language: "es-ES",
+          language: "es-MX",
           page,
         },
       }

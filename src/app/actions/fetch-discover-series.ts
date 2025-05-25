@@ -28,7 +28,7 @@ export async function fetchDiscoverSeries(page = 1): Promise<Movie[] | null> {
       {
         params: {
           include_adult: false,
-          language: "es-ES",
+          language: "es-MX",
           page,
           sort_by: "popularity.desc",
         },
@@ -37,10 +37,15 @@ export async function fetchDiscoverSeries(page = 1): Promise<Movie[] | null> {
 
     if (!data.results || data.results.length === 0) return null;
 
-    const safeSeries = data.results.filter(
-      (s) =>
-        !s.adult && isSafeContent(s.name || s.title || s.original_name || "")
-    );
+    const safeSeries = data.results
+      .filter(
+        (s) =>
+          !s.adult && isSafeContent(s.name || s.title || s.original_name || "")
+      )
+      .map((serie) => ({
+        ...serie,
+        media_type: "tv" as const,
+      }));
 
     return safeSeries.length > 0 ? safeSeries : null;
   } catch (error: any) {

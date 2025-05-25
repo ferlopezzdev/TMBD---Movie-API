@@ -17,7 +17,7 @@ export async function fetchFeaturedMovie(): Promise<
         params: {
           include_adult: false,
           include_video: false,
-          language: "es-ES",
+          language: "es-MX",
           page: 1,
           sort_by: "popularity.desc",
         },
@@ -32,7 +32,7 @@ export async function fetchFeaturedMovie(): Promise<
     const { data: videoData } = await axiosInstance.get<MovieVideoResponse>(
       `/movie/${movie.id}/videos`,
       {
-        params: { language: "es-ES" },
+        params: { language: "es-MX" },
       }
     );
 
