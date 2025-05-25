@@ -20,7 +20,7 @@ export const Footer = () => {
           <p className="mt-2">&copy; {new Date().getFullYear()} TMDB.</p>
 
           <div className="space-y-1 mt-2">
-            <p>Desarrollador por: Fernando López</p>
+            <p>Desarrollado por: Fernando López</p>
             <div className="flex gap-4 justify-center md:justify-start mt-1">
               <a
                 href="https://www.instagram.com/ferlopeztr?igsh=aHdsajF3anI5ZmZ0"
