@@ -46,10 +46,7 @@ export const MovieCard = ({ movie, index, view = true }: Props) => {
       className="relative"
     >
       <Card className="bg-transparent border-0">
-        <CardContent
-          className="p-0 overflow-hidden rounded-lg relative group"
-          onMouseEnter={() => console.log(movie)}
-        >
+        <CardContent className="p-0 overflow-hidden rounded-lg relative group">
           <Link href={`/${mediaType}/${movie.id}`}>{content}</Link>
         </CardContent>
       </Card>

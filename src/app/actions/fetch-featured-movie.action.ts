@@ -26,8 +26,6 @@ export async function fetchFeaturedMovie(): Promise<
 
     const movie = data.results[1];
 
-    console.log(movie);
-
     // Buscar trailer
     const { data: videoData } = await axiosInstance.get<MovieVideoResponse>(
       `/movie/${movie.id}/videos`,
