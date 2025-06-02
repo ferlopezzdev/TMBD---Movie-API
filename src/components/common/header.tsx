@@ -15,7 +15,7 @@ export const Header = () => {
   const pathname = usePathname();
 
   return (
-    <header className="sticky top-0 z-50 bg-gradient-to-b from-blue-950 via-blue-950/70 to-transparent backdrop-blur-md">
+    <header className="sticky top-0 z-50 bg-gradient-to-b from-black via-transparent to-transparent backdrop-blur-md">
       <div className="max-w-[100dvw] mx-auto flex items-center justify-between px-6 md:px-12 py-4">
         <div className="flex items-center space-x-6 md:space-x-8">
           <Link
