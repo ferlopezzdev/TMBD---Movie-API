@@ -24,7 +24,7 @@ export async function fetchFeaturedMovie(): Promise<
       }
     );
 
-    const movie = data.results[1];
+    const movie = data.results[0];
 
     // Buscar trailer
     const { data: videoData } = await axiosInstance.get<MovieVideoResponse>(
