@@ -105,7 +105,7 @@ export const HeroSection = ({
           <p className="text-sm md:text-base line-clamp-4">{movie.overview}</p>
 
           <Link
-            href="/movie/574475"
+            href={`/movie/${movie.id}`}
             className="inline-flex items-center gap-2 px-4 py-2 md:px-6 md:py-3 text-sm md:text-base bg-white/10 text-white rounded-full backdrop-blur-sm border border-white/30 hover:bg-white/20 transition-colors focus:outline-none focus:ring-2 focus:ring-white/50"
           >
             <Info className="w-4 h-4 md:w-5 md:h-5" />
